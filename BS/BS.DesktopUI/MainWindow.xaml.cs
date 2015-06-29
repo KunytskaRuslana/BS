@@ -1,6 +1,7 @@
 ﻿using BS.DesktopUI.ViewModels;
 using BS.Repositories;
 using BS.Repositories.Fake;
+using BS.Repositories.Sql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,11 @@ namespace BS.DesktopUI
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            IProductRepository productRepository = new FakeProductRepository();
+            //IProductRepository productRepository = new FakeProductRepository();
+            //ProductViewModel viewModel = new ProductViewModel(productRepository);
+            //this.ucProducts.DataContext = viewModel;
+
+            IProductRepository productRepository = new SqlProductRepository();
             ProductViewModel viewModel = new ProductViewModel(productRepository);
             this.ucProducts.DataContext = viewModel;
         }

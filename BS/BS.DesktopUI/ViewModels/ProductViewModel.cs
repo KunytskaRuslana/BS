@@ -10,6 +10,12 @@ namespace BS.DesktopUI.ViewModels
 {
     public class ProductViewModel
     {
+        #region Queries
+
+        //string querySelect = "SELECT [Id],[Name],[Article],[ProducerId],[Description],[ProductGroupId] FROM [dbo].[tblProduct]";
+
+        #endregion
+
         #region Fields
 
         private readonly IProductRepository _productRepository;

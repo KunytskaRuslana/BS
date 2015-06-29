@@ -113,10 +113,29 @@
       <Project>{63a71f91-43c4-42cf-9fb8-944c2303392c}</Project>
       <Name>BS.Repositories.Fake</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BS.Repositories.Sql\BS.Repositories.Sql.csproj">
+      <Project>{19e0f270-1e77-4bbb-940e-5416dd32baee}</Project>
+      <Name>BS.Repositories.Sql</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BS.Repositories\BS.Repositories.csproj">
       <Project>{193c33d4-363c-44ab-ad01-6c4ad7843ead}</Project>
       <Name>BS.Repositories</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\new.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\refresh.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
