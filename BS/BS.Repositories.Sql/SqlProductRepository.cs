@@ -13,6 +13,7 @@ namespace BS.Repositories.Sql
         // queries
         string querySelect = "SELECT [Id],[Name],[Article],[ProducerId],[Description],[ProductGroupId] FROM [dbo].[tblProduct] ORDER BY [Name] DESC";
         string queryCount = "SELECT COUNT(*) FROM [dbo].[tblProduct]";
+        string queryInsert = "INSERT INTO [dbo].[tblProduct] ([Name],[Article],[Description]) VALUES (@Name,@Article,@Description); SELECT CAST(SCOPE_IDENTITY() AS INT);";
         string connectionString = "Server=RUSLANA-ПК;DataBase=BS_KRV;User=sa;password=19999";
 
         public List<Product> SelectAll()
@@ -35,7 +36,7 @@ namespace BS.Repositories.Sql
                                 Id = (int)reader["id"],
                                 Name = (string)reader["Name"],
                                 Article = (object.Equals(reader["Article"], DBNull.Value) == false
-                                                            ? (string)reader["ProducerId"]
+                                                            ? (string)reader["Article"]
                                                             : default(string)),
                                 ProducerId = (object.Equals(reader["ProducerId"], DBNull.Value) == false
                                                             ? (int?)reader["ProducerId"]
@@ -50,6 +51,26 @@ namespace BS.Repositories.Sql
                         }
                         return product;
                     }
+                }
+            }
+        }
+
+        public Product AddRecord(Product product)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(queryInsert, connection))
+                {
+                    //command.Parameters.AddWithValue("Id", myListProduct.Id);
+                    command.Parameters.AddWithValue("Name", product.Name);
+                    command.Parameters.AddWithValue("Article", product.Article);
+                    command.Parameters.AddWithValue("Description", product.Description);
+
+                    int connectId = (int)command.ExecuteScalar();
+                    product.Id = connectId;
+
+                    return product;
                 }
             }
         }

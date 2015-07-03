@@ -28,5 +28,11 @@ namespace BS.DesktopUI.Views
             SqlProductRepository colRecord = new SqlProductRepository();
             txtColRecord.Text = Convert.ToString(colRecord.CountRecords());
         }
+
+        private void btnNew_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditRecord addEditRecord = new AddEditRecord();
+            addEditRecord.Show();
+        }
     }
 }

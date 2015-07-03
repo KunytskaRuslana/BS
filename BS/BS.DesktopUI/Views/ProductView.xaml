@@ -13,19 +13,19 @@
                 <RowDefinition Height="30"></RowDefinition>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="1">
-                <Button Margin="3">
+                <Button Margin="3" Name="btnNew" Click="btnNew_Click">
                     <Image Source="Images/new.ico" />
                 </Button>
-                <Button Margin="3">
+                <Button Margin="3" Name="btnEdit">
                     <Image Source="Images/edit.ico" />
                 </Button>
-                <Button Margin="3">
+                <Button Margin="3" Name="btnCopy">
                     <Image Source="Images/copy.ico" />
                 </Button>
-                <Button Margin="3">
+                <Button Margin="3" Name="btnDelete">
                     <Image Source="Images/delete.ico" />
                 </Button>
-                <Button Margin="15,3">
+                <Button Margin="15,3" Name="btnRefresh">
                     <Image Source="Images/refresh.ico" />
                 </Button>
             </StackPanel>

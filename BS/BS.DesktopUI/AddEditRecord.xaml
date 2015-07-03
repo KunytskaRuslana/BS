@@ -1,0 +1,29 @@
+﻿<Window x:Class="BS.DesktopUI.AddEditRecord"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AddEditRecord" Height="250" Width="300">
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Назва товару" Margin="12"></TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="1" Name="txtName" Margin="10" MaxLength="255"></TextBox>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Артикул" Margin="12"></TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="txtArticle" Margin="10" MaxLength="100"></TextBox>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical">
+            <TextBlock Text="Опис" Margin="12,1,1,1"></TextBlock>
+            <TextBox Name="txtDescription" Margin="12,1,1,1" Height="65" MaxLength="1024" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="btnOk" Content="Ok" Height="25" Width="70" Margin="12,6" Click="btnOk_Click"></Button>
+            <Button Name="btnCancel" Content="Cancel" Height="25" Margin="12,6" Width="70" Click="btnCancel_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

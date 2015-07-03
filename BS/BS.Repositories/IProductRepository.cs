@@ -10,6 +10,7 @@ namespace BS.Repositories
     public interface IProductRepository
     {
         List<Product> SelectAll();
+        Product AddRecord(Product product);
         int CountRecords();
     }
 }
