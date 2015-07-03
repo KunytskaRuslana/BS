@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{19E0F270-1E77-4BBB-940E-5416DD32BAEE}</ProjectGuid>
+    <ProjectGuid>{FFC3D7C7-88BB-4989-A879-7C1926F33A68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BS.Repositories.Sql</RootNamespace>
@@ -44,11 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BS.Entities\BS.Entities.csproj">
-      <Project>{45bfd36b-d8cf-401d-b80e-33d93f4b5481}</Project>
+      <Project>{ee78c3a9-6948-4a75-8c12-4b3f629a3dc6}</Project>
       <Name>BS.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\BS.Repositories\BS.Repositories.csproj">
-      <Project>{193c33d4-363c-44ab-ad01-6c4ad7843ead}</Project>
+      <Project>{b6caac85-6c16-468d-a00c-911faf20c1f3}</Project>
       <Name>BS.Repositories</Name>
     </ProjectReference>
   </ItemGroup>

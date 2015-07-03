@@ -29,22 +29,32 @@
                     <Image Source="Images/refresh.ico" />
                 </Button>
             </StackPanel>
-            <DataGrid Grid.Row="1" Margin="1" ItemsSource="{Binding Path=Products}" AutoGenerateColumns="True">
+            <DataGrid Grid.Row="1" Margin="1" ItemsSource="{Binding Path=Products}" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <!--<DataGridTextColumn Header="№" />
-                    <DataGridTextColumn Header="Назва" />
-                    <DataGridTextColumn Header="Скорочена назва" />
-                    <DataGridTextColumn Header="Виробник" />
-                    <DataGridTextColumn Header="Адреса виробника" />-->
+                    <DataGridTextColumn Header="№" Binding="{Binding Path=npp}" />
+                    <!--<DataGridTextColumn Header="ID" Binding="{Binding Path=Id}" />-->
+                    <DataGridTextColumn Header="Назва" Binding="{Binding Path=Name}" />
+                    <DataGridTextColumn Header="Артикул" Binding="{Binding Path=Article}" />
+                    <DataGridTextColumn Header="Виробник" Binding="{Binding Path=ProducerId}" />
+                    <DataGridTextColumn Header="Опис" Binding="{Binding Path=Description}" />
+                    <DataGridTextColumn Header="Група" Binding="{Binding Path=ProductGroupId}" />
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="1" HorizontalAlignment="Center">
                 <TextBlock Text="Запис" Margin="5"></TextBlock>
-                <Button Margin="3"></Button>
-                <Button Margin="3"></Button>
+                <Button Margin="3">
+                    <Image Source="Images/previousleft.ico"></Image>
+                </Button>
+                <Button Margin="3">
+                    <Image Source="Images/left.ico"></Image>
+                </Button>
                 <TextBox Text="1" Margin="3"></TextBox>
-                <Button Margin="3"></Button>
-                <Button Margin="3"></Button>
+                <Button Margin="3">
+                    <Image Source="Images/previousright.ico"></Image>
+                </Button>
+                <Button Margin="3">
+                    <Image Source="Images/right.ico"></Image>
+                </Button>
                 <TextBlock Text="із" Margin="5"></TextBlock>
                 <TextBox Text="6" Margin="3" Name="txtColRecord"></TextBox>
             </StackPanel>

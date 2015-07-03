@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{63A71F91-43C4-42CF-9FB8-944C2303392C}</ProjectGuid>
+    <ProjectGuid>{3E647DAF-5DA8-42C3-B91A-BD9E759EBF85}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BS.Repositories.Fake</RootNamespace>
@@ -44,11 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BS.Entities\BS.Entities.csproj">
-      <Project>{45bfd36b-d8cf-401d-b80e-33d93f4b5481}</Project>
+      <Project>{ee78c3a9-6948-4a75-8c12-4b3f629a3dc6}</Project>
       <Name>BS.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\BS.Repositories\BS.Repositories.csproj">
-      <Project>{193c33d4-363c-44ab-ad01-6c4ad7843ead}</Project>
+      <Project>{b6caac85-6c16-468d-a00c-911faf20c1f3}</Project>
       <Name>BS.Repositories</Name>
     </ProjectReference>
   </ItemGroup>

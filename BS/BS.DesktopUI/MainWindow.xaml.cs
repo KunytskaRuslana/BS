@@ -1,8 +1,4 @@
-﻿using BS.DesktopUI.ViewModels;
-using BS.Repositories;
-using BS.Repositories.Fake;
-using BS.Repositories.Sql;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BS.DesktopUI.ViewModels;
+using BS.Repositories;
+using BS.Repositories.Fake;
+using BS.Repositories.Sql;
 
 namespace BS.DesktopUI
 {
@@ -31,10 +31,6 @@ namespace BS.DesktopUI
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //IProductRepository productRepository = new FakeProductRepository();
-            //ProductViewModel viewModel = new ProductViewModel(productRepository);
-            //this.ucProducts.DataContext = viewModel;
-
             IProductRepository productRepository = new SqlProductRepository();
             ProductViewModel viewModel = new ProductViewModel(productRepository);
             this.ucProducts.DataContext = viewModel;

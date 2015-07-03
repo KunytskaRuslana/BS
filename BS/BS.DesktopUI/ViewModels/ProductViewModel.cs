@@ -1,10 +1,10 @@
-﻿using BS.Entities;
-using BS.Repositories;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BS.Entities;
+using BS.Repositories;
 
 namespace BS.DesktopUI.ViewModels
 {
@@ -35,7 +35,7 @@ namespace BS.DesktopUI.ViewModels
 
         public List<Product> Products
         {
-            get 
+            get
             {
                 return this._productRepository.SelectAll();
             }

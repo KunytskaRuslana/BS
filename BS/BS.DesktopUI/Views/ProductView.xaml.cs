@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BS.Repositories.Sql;
 
 namespace BS.DesktopUI.Views
 {
@@ -23,6 +24,9 @@ namespace BS.DesktopUI.Views
         public ProductView()
         {
             InitializeComponent();
+
+            SqlProductRepository colRecord = new SqlProductRepository();
+            txtColRecord.Text = Convert.ToString(colRecord.CountRecords());
         }
     }
 }

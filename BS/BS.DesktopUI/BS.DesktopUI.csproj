@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A25B5739-69D4-4E1B-A1B7-93D76E03CF4F}</ProjectGuid>
+    <ProjectGuid>{DBA9E56E-6AB5-47C2-9920-404F9881A677}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BS.DesktopUI</RootNamespace>
@@ -106,19 +106,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BS.Entities\BS.Entities.csproj">
-      <Project>{45bfd36b-d8cf-401d-b80e-33d93f4b5481}</Project>
+      <Project>{ee78c3a9-6948-4a75-8c12-4b3f629a3dc6}</Project>
       <Name>BS.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\BS.Repositories.Fake\BS.Repositories.Fake.csproj">
-      <Project>{63a71f91-43c4-42cf-9fb8-944c2303392c}</Project>
+      <Project>{3e647daf-5da8-42c3-b91a-bd9e759ebf85}</Project>
       <Name>BS.Repositories.Fake</Name>
     </ProjectReference>
     <ProjectReference Include="..\BS.Repositories.Sql\BS.Repositories.Sql.csproj">
-      <Project>{19e0f270-1e77-4bbb-940e-5416dd32baee}</Project>
+      <Project>{ffc3d7c7-88bb-4989-a879-7c1926f33a68}</Project>
       <Name>BS.Repositories.Sql</Name>
     </ProjectReference>
     <ProjectReference Include="..\BS.Repositories\BS.Repositories.csproj">
-      <Project>{193c33d4-363c-44ab-ad01-6c4ad7843ead}</Project>
+      <Project>{b6caac85-6c16-468d-a00c-911faf20c1f3}</Project>
       <Name>BS.Repositories</Name>
     </ProjectReference>
   </ItemGroup>
@@ -132,10 +132,22 @@
     <Resource Include="Images\edit.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\left.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Images\new.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\previousleft.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\previousright.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Images\refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\right.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
