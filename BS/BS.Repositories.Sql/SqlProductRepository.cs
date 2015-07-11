@@ -105,7 +105,7 @@ namespace BS.Repositories.Sql
                 connection.Open();
                 using (SqlCommand command = new SqlCommand(queryDelete, connection))
                 {
-                    command.Parameters.AddWithValue("id", prodId);
+                    command.Parameters.AddWithValue("Id", prodId);
 
                     command.ExecuteNonQuery();
                 }

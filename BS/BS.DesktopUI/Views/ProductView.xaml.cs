@@ -107,5 +107,19 @@ namespace BS.DesktopUI.Views
                 }
             }
         }
+
+        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            SqlProductRepository listProduct = new SqlProductRepository();
+            List<Product> list = new List<Product>();
+            list = listProduct.SelectAll();
+            this.ListRecord.ItemsSource = list;
+            txtColRecord.Text = listProduct.CountRecords().ToString();
+        }
+
+        private void ListRecord_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            txtNumRecord.Text = (ListRecord.SelectedIndex + 1).ToString();
+        }
     }
 }
