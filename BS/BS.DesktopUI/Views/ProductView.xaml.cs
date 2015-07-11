@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BS.Repositories.Sql;
+using BS.Entities;
 
 namespace BS.DesktopUI.Views
 {
@@ -32,7 +33,31 @@ namespace BS.DesktopUI.Views
         private void btnNew_Click(object sender, RoutedEventArgs e)
         {
             AddEditRecord addEditRecord = new AddEditRecord();
+            addEditRecord.NumberOperation = 7;
             addEditRecord.Show();
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            int numRecord = ListRecord.SelectedIndex+1;
+            if (numRecord == 0)
+            {
+                MessageBox.Show("Виберіть рядок для редагування");
+            }
+            else
+            {
+                SqlProductRepository idRecord = new SqlProductRepository();
+                int _idRecord = idRecord.GetId(numRecord);
+                Product product = new Product();
+                product = idRecord.GetRowById(_idRecord);
+                AddEditRecord addEditRecord = new AddEditRecord();
+                addEditRecord.NumberOperation = 4;
+                addEditRecord._Id = product.Id;
+                addEditRecord.txtName.Text = product.Name;
+                addEditRecord.txtArticle.Text = product.Article;
+                addEditRecord.txtDescription.Text = product.Description;
+                addEditRecord.Show();
+            }
         }
     }
 }

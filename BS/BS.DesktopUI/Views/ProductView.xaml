@@ -16,7 +16,7 @@
                 <Button Margin="3" Name="btnNew" Click="btnNew_Click">
                     <Image Source="Images/new.ico" />
                 </Button>
-                <Button Margin="3" Name="btnEdit">
+                <Button Margin="3" Name="btnEdit" Click="btnEdit_Click">
                     <Image Source="Images/edit.ico" />
                 </Button>
                 <Button Margin="3" Name="btnCopy">
@@ -29,7 +29,7 @@
                     <Image Source="Images/refresh.ico" />
                 </Button>
             </StackPanel>
-            <DataGrid Grid.Row="1" Margin="1" ItemsSource="{Binding Path=Products}" AutoGenerateColumns="False">
+            <DataGrid Grid.Row="1" Margin="1" ItemsSource="{Binding Path=Products}" AutoGenerateColumns="False" Name="ListRecord">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Binding="{Binding Path=npp}" />
                     <!--<DataGridTextColumn Header="ID" Binding="{Binding Path=Id}" />-->
@@ -48,7 +48,7 @@
                 <Button Margin="3">
                     <Image Source="Images/left.ico"></Image>
                 </Button>
-                <TextBox Text="1" Margin="3"></TextBox>
+                <TextBox Text="1" Margin="3" Name="txtNumRecord"></TextBox>
                 <Button Margin="3">
                     <Image Source="Images/previousright.ico"></Image>
                 </Button>

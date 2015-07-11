@@ -11,6 +11,9 @@ namespace BS.Repositories
     {
         List<Product> SelectAll();
         Product AddRecord(Product product);
+        void EditRecord(Product product);
         int CountRecords();
+        int GetId(int numRecord);
+        Product GetRowById(int id);
     }
 }
