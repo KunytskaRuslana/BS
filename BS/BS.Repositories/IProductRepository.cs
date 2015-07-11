@@ -12,6 +12,7 @@ namespace BS.Repositories
         List<Product> SelectAll();
         Product AddRecord(Product product);
         void EditRecord(Product product);
+        void DeleteRecord(int prodId);
         int CountRecords();
         int GetId(int numRecord);
         Product GetRowById(int id);

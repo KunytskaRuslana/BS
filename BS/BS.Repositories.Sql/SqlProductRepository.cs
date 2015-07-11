@@ -19,6 +19,7 @@ namespace BS.Repositories.Sql
         string queryCount = "SELECT COUNT(*) FROM [dbo].[tblProduct]";
         string queryInsert = "INSERT INTO [dbo].[tblProduct] ([Name],[Article],[Description]) VALUES (@Name,@Article,@Description); SELECT CAST(SCOPE_IDENTITY() AS INT);";
         string queryUpdate = "UPDATE [dbo].[tblProduct] SET [Name] = @Name, [Article] = @Article, [Description] = @Description WHERE [Id] = @Id";
+        string queryDelete = "DELETE FROM [dbo].[tblProduct] WHERE [Id] = @Id";
         string connectionString = "Server=RUSLANA-ПК;DataBase=BS_KRV;User=sa;password=19999";
 
         public List<Product> SelectAll()
@@ -91,6 +92,20 @@ namespace BS.Repositories.Sql
                     command.Parameters.AddWithValue("Name", product.Name);
                     command.Parameters.AddWithValue("Article", product.Article);
                     command.Parameters.AddWithValue("Description", product.Description);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void DeleteRecord(int prodId)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(queryDelete, connection))
+                {
+                    command.Parameters.AddWithValue("id", prodId);
 
                     command.ExecuteNonQuery();
                 }

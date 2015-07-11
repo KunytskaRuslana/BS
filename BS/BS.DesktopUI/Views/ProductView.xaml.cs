@@ -82,5 +82,30 @@ namespace BS.DesktopUI.Views
                 addEditRecord.Show();
             }
         }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            int numRecord = ListRecord.SelectedIndex + 1;
+            if (numRecord == 0)
+            {
+                MessageBox.Show("Виберіть рядок для операції 'Видалення'");
+            }
+            else
+            {
+                SqlProductRepository idRecord = new SqlProductRepository();
+                int _idRecord = idRecord.GetId(numRecord);
+                Product product = new Product();
+                product = idRecord.GetRowById(_idRecord);
+                AddEditRecord addEditRecord = new AddEditRecord();
+                string __name = product.Name;
+                string __article = product.Article;
+                string __description = product.Description;
+                string message = string.Format("Ви дійсно бажаєте видалити запис? \nНазва: {0} \nАртикул: {1} \nОпис: {2}", __name, __article, __description);
+                if (MessageBox.Show(message, "Видалення запису", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    idRecord.DeleteRecord(_idRecord);
+                }
+            }
+        }
     }
 }
