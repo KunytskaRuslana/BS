@@ -90,6 +90,19 @@ namespace BS.DesktopUI
 
                 sqlProductRepository.EditRecord(editProduct);
             }
+            if (NumberOperation == 5)
+            {
+                Product copyProduct = new Product();
+                _Name = txtName.Text;
+                _Article = txtArticle.Text;
+                _Description = txtDescription.Text;
+                //copyProduct.Id = _Id;
+                copyProduct.Name = _Name;
+                copyProduct.Article = _Article;
+                copyProduct.Description = _Description;
+
+                sqlProductRepository.AddRecord(copyProduct);
+            }
 
             Close();
         }

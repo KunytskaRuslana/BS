@@ -19,7 +19,7 @@
                 <Button Margin="3" Name="btnEdit" Click="btnEdit_Click">
                     <Image Source="Images/edit.ico" />
                 </Button>
-                <Button Margin="3" Name="btnCopy">
+                <Button Margin="3" Name="btnCopy" Click="btnCopy_Click">
                     <Image Source="Images/copy.ico" />
                 </Button>
                 <Button Margin="3" Name="btnDelete">

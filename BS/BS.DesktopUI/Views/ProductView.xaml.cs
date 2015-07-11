@@ -59,5 +59,28 @@ namespace BS.DesktopUI.Views
                 addEditRecord.Show();
             }
         }
+
+        private void btnCopy_Click(object sender, RoutedEventArgs e)
+        {
+            int numRecord = ListRecord.SelectedIndex + 1;
+            if (numRecord == 0)
+            {
+                MessageBox.Show("Виберіть рядок для операції 'По зразку'");
+            }
+            else
+            {
+                SqlProductRepository idRecord = new SqlProductRepository();
+                int _idRecord = idRecord.GetId(numRecord);
+                Product product = new Product();
+                product = idRecord.GetRowById(_idRecord);
+                AddEditRecord addEditRecord = new AddEditRecord();
+                addEditRecord.NumberOperation = 5;
+                addEditRecord._Id = product.Id;
+                addEditRecord.txtName.Text = product.Name;
+                addEditRecord.txtArticle.Text = product.Article;
+                addEditRecord.txtDescription.Text = product.Description;
+                addEditRecord.Show();
+            }
+        }
     }
 }
